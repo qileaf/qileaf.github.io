@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SGH wheelchair navigation icon">
+  <rect width="512" height="512" rx="112" fill="#9b1c31"/>
+  <circle cx="190" cy="122" r="50" fill="#fff"/>
+  <path d="M184 190h56l20 86h75v58h-123l-28-144Z" fill="#fff"/>
+  <path d="M215 378a92 92 0 1 1-66-154l12 58a34 34 0 1 0 42 48l55 20a92 92 0 0 1-43 28Z" fill="#fff"/>
+  <path d="M333 196h76l-30-30 28-28 78 78-78 78-28-28 30-30h-76v-40Z" fill="#e7f4f4"/>
+</svg>

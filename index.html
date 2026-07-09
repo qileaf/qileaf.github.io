@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SGH Wheelchair Route Navigator — Prototype</title>
+  <meta name="description" content="Static prototype for wheelchair-accessible route navigation around Singapore General Hospital campus." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#9b1c31" />
+</head>
+<body>
+  <a class="skip-link" href="#route-panel">Skip to route results</a>
+
+  <header class="app-header">
+    <div class="brand-block">
+      <div class="app-mark" aria-hidden="true">♿</div>
+      <div>
+        <p class="eyebrow">Presentation prototype</p>
+        <h1>SGH Wheelchair Route Navigator</h1>
+        <p class="header-subtitle">Choose two SGH campus points. Routes use only step-free, wheelchair-accessible links in this prototype graph.</p>
+      </div>
+    </div>
+    <div class="status-card" id="shuttleStatus" aria-live="polite"></div>
+  </header>
+
+  <main class="layout">
+    <section class="controls-card" aria-labelledby="planRouteHeading">
+      <div class="section-heading">
+        <p class="eyebrow">Plan route</p>
+        <h2 id="planRouteHeading">Start and endpoint</h2>
+      </div>
+
+      <form id="routeForm" class="route-form">
+        <div class="field">
+          <label for="startSelect">Start point</label>
+          <select id="startSelect" name="start" required></select>
+        </div>
+
+        <div class="swap-row">
+          <button type="button" id="swapButton" class="ghost-button" aria-label="Swap start and endpoint">⇅ Swap</button>
+        </div>
+
+        <div class="field">
+          <label for="endSelect">Endpoint</label>
+          <select id="endSelect" name="end" required></select>
+        </div>
+
+        <div class="field">
+          <label for="preferenceSelect">Route preference</label>
+          <select id="preferenceSelect" name="preference">
+            <option value="leastRoll">Least rolling distance</option>
+            <option value="fastest">Fastest accessible route</option>
+            <option value="avoidShuttle">Avoid shuttle where possible</option>
+          </select>
+        </div>
+
+        <button class="primary-button" type="submit">Route Now</button>
+      </form>
+
+      <div class="helper-card" role="note">
+        <strong>Map is always visible.</strong> Change the dropdowns to set the pins, then press <strong>Route Now</strong> to overlay the selected wheelchair-accessible route.
+      </div>
+
+      <div class="quick-picks" aria-label="Example routes">
+        <p class="quick-picks-title">Demo shortcuts</p>
+        <button type="button" class="preset" data-start="mrt_exit_7" data-end="nccs">MRT Exit 7 → NCCS</button>
+        <button type="button" class="preset" data-start="mrt_exit_6" data-end="och">MRT Exit 6 → OCH</button>
+        <button type="button" class="preset" data-start="snec" data-end="emergency">SNEC → Emergency</button>
+      </div>
+    </section>
+
+    <section class="map-card" aria-labelledby="mapHeading">
+      <div class="map-toolbar">
+        <div>
+          <p class="eyebrow">SGH campus schematic</p>
+          <h2 id="mapHeading">Wheelchair-accessible map</h2>
+        </div>
+        <div class="legend" aria-label="Map legend">
+          <span><i class="legend-line accessible"></i> accessible link</span>
+          <span><i class="legend-line shuttle"></i> wheelchair shuttle</span>
+          <span><i class="legend-line route"></i> selected route</span>
+          <span><i class="legend-line blocked"></i> excluded route</span>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <svg id="campusMap" viewBox="0 0 1020 660" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">SGH wheelchair-accessible navigation prototype map</title>
+          <desc id="mapDesc">A schematic SGH campus map with start and endpoint pins. Press Route Now to overlay the route.</desc>
+          <defs>
+            <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="7" stdDeviation="7" flood-opacity="0.17" />
+            </filter>
+            <marker id="routeArrow" markerWidth="11" markerHeight="11" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,7 L10,3.5 z" fill="#165dff"></path>
+            </marker>
+          </defs>
+          <g id="zoneLayer" class="zone-layer"></g>
+          <g id="edgeLayer" class="edge-layer"></g>
+          <g id="blockedLayer" class="blocked-layer"></g>
+          <g id="routeLayer" class="route-layer"></g>
+          <g id="nodeLayer" class="node-layer"></g>
+        </svg>
+      </div>
+    </section>
+
+    <section id="route-panel" class="results-card" aria-labelledby="routeResultsHeading">
+      <div class="section-heading results-heading-row">
+        <div>
+          <p class="eyebrow">Wheelchair accessible only</p>
+          <h2 id="routeResultsHeading">Route results</h2>
+        </div>
+        <button type="button" id="clearRouteButton" class="ghost-button compact">Clear route</button>
+      </div>
+
+      <div id="routeSummary" class="route-summary" aria-live="polite"></div>
+      <ol id="routeSteps" class="route-steps"></ol>
+    </section>
+
+    <section class="source-card" aria-labelledby="scopeHeading">
+      <h2 id="scopeHeading">Prototype scope</h2>
+      <p>This presentation version limits dropdown choices to: OCH, Emergency, Block 3, Block 4, Block 5, Block 6, Block 7, MRT Exit 6, MRT Exit 7, NCCS, Academia, SNEC, and NHS.</p>
+      <ul>
+        <li>The map remains visible before and after route generation.</li>
+        <li>The blue route overlay appears only after <strong>Route Now</strong> is pressed.</li>
+        <li>The temporary direct pedestrian route from MRT Exit 6 into campus is shown as excluded, so it is never used by the routing engine.</li>
+        <li>Wheelchair shuttle links are only considered when the selected route starts or ends at MRT Exit 6, to avoid unrealistic campus-to-campus detours.</li>
+        <li>Distances, travel time, exact turns, slopes, lift status, door widths, and construction closures are placeholder values for stakeholder review.</li>
+      </ul>
+    </section>
+  </main>
+
+  <template id="summaryTemplate">
+    <div class="metric-grid">
+      <div class="metric"><span class="metric-value" data-field="time"></span><span class="metric-label">estimated elapsed time</span></div>
+      <div class="metric"><span class="metric-value" data-field="roll"></span><span class="metric-label">rolling distance</span></div>
+      <div class="metric"><span class="metric-value" data-field="segments"></span><span class="metric-label">accessible segments</span></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
