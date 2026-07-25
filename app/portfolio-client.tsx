@@ -46,17 +46,6 @@ type Profile = {
   projectNotes: Record<string, string>;
 };
 
-const languageColors: Record<string, string> = {
-  TypeScript: "#55d8ff",
-  JavaScript: "#f1df62",
-  Python: "#8ab4ff",
-  HTML: "#ff8d72",
-  CSS: "#c68cff",
-  Java: "#f89870",
-  "C++": "#ff7ca8",
-  C: "#b8c5df",
-};
-
 function formatDate(value: string) {
   return new Intl.DateTimeFormat("en", {
     month: "short",
@@ -170,14 +159,6 @@ export function Portfolio({
     );
   });
 
-  const languageCounts = projects.reduce<Record<string, number>>((acc, repo) => {
-    if (repo.language) acc[repo.language] = (acc[repo.language] || 0) + 1;
-    return acc;
-  }, {});
-  const primaryLanguages = Object.entries(languageCounts)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 4);
-
   return (
     <main>
       <header className="site-header">
@@ -247,37 +228,6 @@ export function Portfolio({
         <div className="scroll-cue" aria-hidden="true">
           <span>SCROLL TO EXPLORE</span>
           <i />
-        </div>
-      </section>
-
-      <section className="telemetry" aria-label="GitHub profile statistics">
-        <div>
-          <span className="telemetry-label">Public repositories</span>
-          <strong>{github.profile.public_repos || projects.length}</strong>
-        </div>
-        <div>
-          <span className="telemetry-label">GitHub followers</span>
-          <strong>{github.profile.followers}</strong>
-        </div>
-        <div className="language-telemetry">
-          <span className="telemetry-label">Primary stack</span>
-          <div>
-            {primaryLanguages.map(([name]) => (
-              <span key={name}>
-                <i
-                  style={{ background: languageColors[name] || "#8f9bb3" }}
-                  aria-hidden="true"
-                />
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div>
-          <span className="telemetry-label">Data refreshed</span>
-          <strong className="telemetry-date">
-            {formatDate(github.generatedAt)}
-          </strong>
         </div>
       </section>
 

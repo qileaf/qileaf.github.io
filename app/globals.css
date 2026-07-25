@@ -138,19 +138,6 @@ h1 em { color: var(--muted); font-weight: 350; font-style: normal; }
 .scroll-cue i { width: 45px; height: 1px; background: var(--line-strong); }
 @keyframes rotate { to { transform: rotate(360deg); } }
 
-.telemetry {
-  max-width: 1440px; margin: auto; display: grid; grid-template-columns: 1fr 1fr 2fr 1fr;
-  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-}
-.telemetry > div { min-height: 126px; padding: 28px 3vw; border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; }
-.telemetry > div:last-child { border-right: 0; }
-.telemetry-label { color: var(--muted); font: 9px var(--mono); text-transform: uppercase; letter-spacing: .15em; }
-.telemetry strong { font-size: 32px; font-weight: 450; letter-spacing: -.04em; }
-.telemetry-date { font-size: 19px !important; }
-.language-telemetry > div { display: flex; gap: 20px; flex-wrap: wrap; }
-.language-telemetry > div span { display: flex; align-items: center; gap: 7px; font: 12px var(--mono); }
-.language-telemetry i { width: 6px; height: 6px; border-radius: 50%; }
-
 .section { max-width: 1440px; margin: auto; padding: 130px 5vw; border-bottom: 1px solid var(--line); }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 60px; margin-bottom: 62px; }
 .section-heading .eyebrow { margin-top: 0; }
@@ -217,9 +204,6 @@ footer a:hover { color: var(--cyan); }
   .hero-orbit { right: -22%; opacity: .42; }
   .featured-grid, .repository-grid { grid-template-columns: repeat(2, 1fr); }
   .featured-grid .project-card:last-child { grid-column: 1 / -1; }
-  .telemetry { grid-template-columns: repeat(2, 1fr); }
-  .telemetry > div:nth-child(2) { border-right: 0; }
-  .telemetry > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
   .about { gap: 6vw; }
 }
 
@@ -240,10 +224,6 @@ footer a:hover { color: var(--cyan); }
   .hero h1 { font-size: clamp(49px, 15vw, 72px); }
   .hero-orbit { width: 430px; top: 36%; right: -58%; opacity: .24; }
   .scroll-cue { display: none; }
-  .telemetry { grid-template-columns: 1fr 1fr; }
-  .telemetry > div { min-height: 110px; padding: 22px 5vw; }
-  .language-telemetry { grid-column: 1 / -1; border-top: 1px solid var(--line); border-right: 0 !important; }
-  .telemetry > div:last-child { grid-column: 1 / -1; border-top: 1px solid var(--line); }
   .section { padding-top: 90px; padding-bottom: 90px; }
   .section-heading { display: block; margin-bottom: 42px; }
   .section-heading > p { margin-top: 22px; }

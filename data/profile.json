@@ -9,6 +9,6 @@
   "resumeUrl": "https://www.linkedin.com/in/faeliq/",
   "skills": ["Python", "SQL", "Natural Language Processing", "Data Analytics", "Clinical Analytics", "Microsoft Power Platform", "Digital Process Automation", "Process Improvement", "Operations Management"],
   "featuredRepos": [],
-  "hiddenRepos": [],
+  "hiddenRepos": ["qileaf.github.io"],
   "projectNotes": {}
 }
