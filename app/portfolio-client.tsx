@@ -206,9 +206,9 @@ export function Portfolio({
           </div>
           <p className="hero-kicker">{profile.role}</p>
           <h1>
-            I build software
+            I build solutions
             <br />
-            <em>that earns its place.</em>
+            <em>that solve real problems.</em>
           </h1>
           <p className="hero-intro">{profile.headline}</p>
           <div className="hero-actions">
@@ -314,8 +314,9 @@ export function Portfolio({
         <p className="eyebrow">04 / Start a conversation</p>
         <h2>Have an interesting<br />problem to solve?</h2>
         <p>
-          I’m always open to thoughtful conversations about software,
-          collaboration, and the next useful thing to build.
+          I’m always open to thoughtful conversations about intelligent
+          automation solutions, collaboration, and the next useful thing to
+          build.
         </p>
         <div className="hero-actions">
           {profile.email.includes("@") && !profile.email.includes("example") ? (
