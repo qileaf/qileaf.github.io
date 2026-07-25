@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-07-25T08:41:58.575Z",
+  "profile": {
+    "login": "qileaf",
+    "name": null,
+    "bio": "boop boop beep beep.",
+    "avatar_url": "https://avatars.githubusercontent.com/u/132201590?v=4",
+    "public_repos": 6,
+    "followers": 0,
+    "html_url": "https://github.com/qileaf"
+  },
+  "repositories": [
+    {
+      "name": "WhisperAI-Llama3.1-ASR-Chatbot-for-food-in-SG",
+      "description": "Personalized local food personal assistant chatbot in Singapore, fine tuned with Singapore locations. Automatic Speech Recognition (ASR) and transcription using WhisperAI, fed into Llama 3.1 through Groq client.",
+      "html_url": "https://github.com/qileaf/WhisperAI-Llama3.1-ASR-Chatbot-for-food-in-SG",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2025-04-08T03:41:38Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "Future-weather-predictions-for-Ops-and-Resource-Planning",
+      "description": "Predicting weather conditions of future dates based on historical data using Prophet and XGBoost models",
+      "html_url": "https://github.com/qileaf/Future-weather-predictions-for-Ops-and-Resource-Planning",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2025-01-14T06:21:43Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "Dengue-Predictor-and-Project-Wolbachia-Study",
+      "description": "Predicting dengue cases in Singapore based on historical data and Project Wolbachia cost-benefit analysis on Tableau.",
+      "html_url": "https://github.com/qileaf/Dengue-Predictor-and-Project-Wolbachia-Study",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2025-01-14T05:54:32Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "NLP-Mental-Health-text-identification",
+      "description": "Using NLP to identify online forum posts showing signs of mental distress. Models compared include Multinomial Naive Bayes, XGBoost, RoBERTa and GPT-2.",
+      "html_url": "https://github.com/qileaf/NLP-Mental-Health-text-identification",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2025-01-11T06:00:50Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "HDB-price-predictions",
+      "description": "Using Linear Regression and its regularized counterparts to predict the housing prices in Singapore and comparing their performances with a gradient boosted model, XGBoost",
+      "html_url": "https://github.com/qileaf/HDB-price-predictions",
+      "homepage": null,
+      "language": "Jupyter Notebook",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2025-01-11T05:51:21Z",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "name": "qileaf.github.io",
+      "description": null,
+      "html_url": "https://github.com/qileaf/qileaf.github.io",
+      "homepage": null,
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 0,
+      "updated_at": "2026-07-09T08:06:23Z",
+      "fork": false,
+      "archived": false
+    }
+  ]
+}
