@@ -163,7 +163,7 @@ export function Portfolio({
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="qileaf home">
-          <span className="brand-mark">Q/</span>
+          <span className="brand-mark">F/</span>
           <span>{profile.displayName || github.profile.name || "qileaf"}</span>
         </a>
         <button
@@ -194,7 +194,7 @@ export function Portfolio({
         <div className="hero-orbit" aria-hidden="true">
           <span className="orbit orbit-one" />
           <span className="orbit orbit-two" />
-          <span className="orbit-core">Q</span>
+          <span className="orbit-core">F</span>
           <span className="orbit-label orbit-label--one">BUILD</span>
           <span className="orbit-label orbit-label--two">SHIP</span>
           <span className="orbit-label orbit-label--three">ITERATE</span>
@@ -335,7 +335,7 @@ export function Portfolio({
           )}
           {profile.resumeUrl && profile.resumeUrl !== "#" && (
             <a className="button button--ghost" href={profile.resumeUrl}>
-              View résumé ↗
+              LinkedIn ↗
             </a>
           )}
         </div>
