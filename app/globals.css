@@ -148,22 +148,28 @@ h1 em { color: var(--muted); font-weight: 350; font-style: normal; }
 .featured-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .project-card {
   min-height: 360px; padding: 25px; background: rgba(13,17,24,.88);
-  border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between;
+  border: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr auto auto; gap: 22px;
   transition: transform .25s, border-color .25s, background .25s;
 }
 .project-card:hover { transform: translateY(-4px); border-color: rgba(100,223,255,.35); background: var(--panel-2); }
 .project-card--large { min-height: 480px; padding: 32px; }
 .project-card__top { display: flex; justify-content: space-between; }
+.project-card__body {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  gap: 14px;
+}
 .project-index { color: var(--muted); font: 11px var(--mono); }
 .project-state { display: flex; align-items: center; gap: 8px; color: var(--muted); font: 9px var(--mono); letter-spacing: .12em; }
 .project-state i { width: 5px; height: 5px; }
-.project-card .eyebrow { margin: 0 0 15px; color: var(--muted); letter-spacing: .08em; }
-.project-card h3 { font-size: 27px; letter-spacing: -.035em; font-weight: 520; text-transform: capitalize; }
+.project-card .eyebrow { margin: 0; color: var(--muted); letter-spacing: .08em; }
+.project-card h3 { min-height: 2.4em; margin: 0; font-size: 27px; line-height: 1.2; letter-spacing: -.035em; font-weight: 520; text-transform: capitalize; }
 .project-card--large h3 { font-size: 34px; }
-.project-description { color: #9ca8ba; line-height: 1.65; }
-.project-meta { min-height: 30px; display: flex; gap: 7px; flex-wrap: wrap; align-items: flex-end; }
+.project-description { margin: 0; color: #9ca8ba; line-height: 1.65; }
+.project-meta { min-height: 30px; display: flex; gap: 7px; flex-wrap: wrap; align-items: center; align-content: center; }
 .project-meta span { padding: 5px 8px; color: var(--muted); background: rgba(255,255,255,.04); font: 9px var(--mono); text-transform: uppercase; }
-.project-actions { padding-top: 22px; margin-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; }
+.project-actions { padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; }
 .project-actions a { font: 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
 .project-actions a:hover { color: var(--cyan); }
 .repository-section { background: rgba(8,11,16,.55); }

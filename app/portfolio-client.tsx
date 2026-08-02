@@ -73,7 +73,7 @@ function ProjectCard({
           PUBLIC
         </span>
       </div>
-      <div>
+      <div className="project-card__body">
         <p className="eyebrow">
           {project.language || "Repository"} · Updated {formatDate(project.updated_at)}
         </p>
