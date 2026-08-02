@@ -343,7 +343,7 @@ export function Portfolio({
 
       <footer>
         <span>© {new Date().getFullYear()} {profile.displayName || "qileaf"}</span>
-        <span>Designed with intent · Built from public GitHub data</span>
+        <span>Designed with intent</span>
         <a href="#top">Back to top ↑</a>
       </footer>
     </main>
