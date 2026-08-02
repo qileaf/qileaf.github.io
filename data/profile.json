@@ -8,7 +8,11 @@
   "email": "faeliq@gmail.com",
   "resumeUrl": "https://www.linkedin.com/in/faeliq/",
   "skills": ["Python", "SQL", "Natural Language Processing", "Data Analytics", "Clinical Analytics", "Microsoft Power Platform", "Digital Process Automation", "Process Improvement", "Operations Management"],
-  "featuredRepos": [],
+  "featuredRepos": [
+    "WhisperAI-Llama3.1-ASR-Chatbot-for-food-in-SG",
+    "NLP-Mental-Health-text-identification",
+    "Dengue-Predictor-and-Project-Wolbachia-Study"
+  ],
   "hiddenRepos": ["qileaf.github.io"],
   "projectNotes": {}
 }
